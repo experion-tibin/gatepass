@@ -2,36 +2,19 @@
 
 var httpObj1=new XMLHttpRequest();
 		// console.log(httpObj1);
-
+view();
 function save(){
 
-	var jsobject={date:"",time:"",purpose:"",visitors:[]};
-	var table = document.getElementById("vtable");
+	var jsobject={name:"",email:"",password:"",company:"",building:""};
+	
 
-
-		jsobject.date=document.getElementById('date').value;
-		jsobject.time=document.getElementById('time').value;
-		jsobject.purpose=document.getElementById('purpose').value;
+		jsobject.name=document.getElementById('name').value;
+		jsobject.email=document.getElementById('email').value;
+		jsobject.password=document.getElementById('password').value;
+		jsobject.company=document.getElementById('company').value;
+		jsobject.building=document.getElementById('building').value;
 		
 		
-	//	console.log(jsobject.items[0]);
-		for ( var i = 1	; row = table.rows[i]; i++ ) {
-  				row = table.rows[i];
-  				 var visitor={names:"",mobile:"",idtype:"",identity:""};
-  				 var arr=[];
-  				for ( var j = 0; col = row.cells[j]; j++ ) {
-  					
-     				arr[j]=col.firstChild.value;
-     				console.log(arr[j]);
-  				}
-		visitor.name=arr[0];
-		visitor.mobile=arr[1];
-		visitor.idtype=arr[2];
-		visitor.identity=arr[3];
-		jsobject.visitors.push(visitor);
-
-		
-		}
 		console.log(jsobject);
 
 httpObj1.onreadystatechange=function()
@@ -59,7 +42,7 @@ httpObj1.onreadystatechange=function()
 	}
 }		
 		
-		httpObj1.open('POST','http://127.0.0.1:8088/create',true);
+		httpObj1.open('POST','http://127.0.0.1:8088/adduser',true);
 		httpObj1.setRequestHeader('content-type','application/json');
 		httpObj1.send(JSON.stringify(jsobject));
 // httpObj.setRequestHeader('content-type','application/x-www-form-urlencoded');
@@ -105,7 +88,7 @@ function add() {
   	//input4.style.width="90%";
   	input4.setAttribute("id",elementId+"4");
   	cell5.appendChild(input5);
-view();
+
 }
 
 function toggle_visibility(id) {

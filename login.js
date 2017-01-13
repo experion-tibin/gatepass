@@ -1,5 +1,10 @@
-$.material.init();
+//$.material.init();
+
+
+
 function abcd(){
+	
+
 var httpObj=new	XMLHttpRequest();
 httpObj.onreadystatechange=function()
 {
@@ -24,7 +29,7 @@ httpObj.onreadystatechange=function()
 			}
 	}
 }
-httpObj.open('POST','http://127.0.0.1:8088/',true);
+httpObj.open('POST','http://127.0.0.1:8088/login',true);
 httpObj.setRequestHeader('content-type','application/x-www-form-urlencoded');
 httpObj.send('eid='+document.getElementById('inputEmail').value+'&password='+document.getElementById('inputPassword').value);
 }
