@@ -1,5 +1,6 @@
 // var bmd = require('bootstrap-material-design');
 // var bs = require('bootstrap');
+<<<<<<< HEAD
 var jwt = require('jsonwebtoken');
 
 var verify = function (req, res, next) {
@@ -32,22 +33,30 @@ var verify = function (req, res, next) {
 	}
   
 }
+=======
+>>>>>>> 8393e0b6667ccca051d2204d3553c1b7698c468d
 
 var express = require('express');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var cors = require('cors');
+<<<<<<< HEAD
 
 var router= express.Router();
 var gateroute= require('./gaterouter.js');
 //var auth= require('./authenticate.js');
 var userroute= require('./userroute.js');
 var loginroute= require('./loginrouter.js');
+=======
+var router= express.Router();
+var gateroute= require('./gaterouter.js');
+>>>>>>> 8393e0b6667ccca051d2204d3553c1b7698c468d
 var conn=mysql.createConnection({host:"localhost",user:"root",password:"tibin",database:"gatepass"});
 var app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+<<<<<<< HEAD
  app.use('/api',verify);
 app.use('/api/gatepass',gateroute);
 app.use('/api/user',userroute);
@@ -55,6 +64,9 @@ app.use('/login',loginroute);
 
 
 
+=======
+app.use('/',gateroute);
+>>>>>>> 8393e0b6667ccca051d2204d3553c1b7698c468d
 
 
 
